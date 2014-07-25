@@ -1,0 +1,504 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+/* line 16, ../sass/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 19, ../sass/_reset.scss */
+body {
+  line-height: 1; }
+
+/* line 22, ../sass/_reset.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 25, ../sass/_reset.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 29, ../sass/_reset.scss */
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+/* line 34, ../sass/_reset.scss */
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/* line 38, ../sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'LatoBold';
+  src: url("../fonts/lato-bold.eot");
+  src: url("../fonts/lato-bold.eot") format("embedded-opentype"), url("../fonts/lato-bold.woff") format("woff"), url("../fonts/lato-bold.ttf") format("truetype"), url("../fonts/lato-bold.svg#LatoBold") format("svg"); }
+
+@font-face {
+  font-family: 'LatoLight';
+  src: url("../fonts/lato-light.eot");
+  src: url("../fonts/lato-light.eot") format("embedded-opentype"), url("../fonts/lato-light.woff") format("woff"), url("../fonts/lato-light.ttf") format("truetype"), url("../fonts/lato-light.svg#LatoLight") format("svg"); }
+
+@font-face {
+  font-family: 'GaramondPremierProLightDisplay';
+  src: url("../fonts/garamondpremrpro-ltdisp.eot");
+  src: url("../fonts/garamondpremrpro-ltdisp.eot") format("embedded-opentype"), url("../fonts/garamondpremrpro-ltdisp.woff") format("woff"), url("../fonts/garamondpremrpro-ltdisp.ttf") format("truetype"), url("../fonts/garamondpremrpro-ltdisp.svg#GaramondPremierProLightDisplay") format("svg"); }
+
+@font-face {
+  font-family: 'GaramondPremierProLightItalicDisplay';
+  src: url("../fonts/garamondpremrpro-ltitdisp.eot");
+  src: url("../fonts/garamondpremrpro-ltitdisp.eot") format("embedded-opentype"), url("../fonts/garamondpremrpro-ltitdisp.woff") format("woff"), url("../fonts/garamondpremrpro-ltitdisp.ttf") format("truetype"), url("../fonts/garamondpremrpro-ltitdisp.svg#GaramondPremierProLightItalicDisplay") format("svg"); }
+
+@font-face {
+  font-family: 'base';
+  src: url("../fonts/base.eot?1o50p");
+  src: url("../fonts/base.eot?#iefix1o50p") format("embedded-opentype"), url("../fonts/base.woff?1o50p") format("woff"), url("../fonts/base.ttf?1o50p") format("truetype"), url("../fonts/base.svg?1o50p#base") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 12, ../sass/_icons.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'base';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* line 26, ../sass/_icons.scss */
+.icon-cart:before {
+  content: "\e610"; }
+
+/* line 29, ../sass/_icons.scss */
+.icon-bubble:before {
+  content: "\e611"; }
+
+/* line 32, ../sass/_icons.scss */
+.icon-cog:before {
+  content: "\e612"; }
+
+/* line 35, ../sass/_icons.scss */
+.icon-close:before {
+  content: "\e613"; }
+
+/* line 38, ../sass/_icons.scss */
+.icon-checkmark:before {
+  content: "\e614"; }
+
+/* line 41, ../sass/_icons.scss */
+.icon-minus:before {
+  content: "\e615"; }
+
+/* line 44, ../sass/_icons.scss */
+.icon-plus:before {
+  content: "\e616"; }
+
+/* line 47, ../sass/_icons.scss */
+.icon-feed:before {
+  content: "\e601"; }
+
+/* line 50, ../sass/_icons.scss */
+.icon-youtube:before {
+  content: "\e602"; }
+
+/* line 53, ../sass/_icons.scss */
+.icon-vimeo:before {
+  content: "\e603"; }
+
+/* line 56, ../sass/_icons.scss */
+.icon-apple:before {
+  content: "\e604"; }
+
+/* line 59, ../sass/_icons.scss */
+.icon-amazon:before {
+  content: "\e605"; }
+
+/* line 62, ../sass/_icons.scss */
+.icon-mail:before {
+  content: "\e606"; }
+
+/* line 65, ../sass/_icons.scss */
+.icon-heart:before {
+  content: "\e617"; }
+
+/* line 68, ../sass/_icons.scss */
+.icon-heart2:before {
+  content: "\e618"; }
+
+/* line 71, ../sass/_icons.scss */
+.icon-search:before {
+  content: "\e619"; }
+
+/* line 74, ../sass/_icons.scss */
+.icon-list:before {
+  content: "\e60f"; }
+
+/* line 77, ../sass/_icons.scss */
+.icon-play:before {
+  content: "\e61a"; }
+
+/* line 80, ../sass/_icons.scss */
+.icon-pause:before {
+  content: "\e61b"; }
+
+/* line 83, ../sass/_icons.scss */
+.icon-stop:before {
+  content: "\e61c"; }
+
+/* line 86, ../sass/_icons.scss */
+.icon-next:before {
+  content: "\e61d"; }
+
+/* line 89, ../sass/_icons.scss */
+.icon-previous:before {
+  content: "\e61e"; }
+
+/* line 92, ../sass/_icons.scss */
+.icon-first:before {
+  content: "\e61f"; }
+
+/* line 95, ../sass/_icons.scss */
+.icon-last:before {
+  content: "\e620"; }
+
+/* line 98, ../sass/_icons.scss */
+.icon-resize-enlarge:before {
+  content: "\e621"; }
+
+/* line 101, ../sass/_icons.scss */
+.icon-resize-shrink:before {
+  content: "\e622"; }
+
+/* line 104, ../sass/_icons.scss */
+.icon-sound:before {
+  content: "\e623"; }
+
+/* line 107, ../sass/_icons.scss */
+.icon-mute:before {
+  content: "\e624"; }
+
+/* line 110, ../sass/_icons.scss */
+.icon-arrow-left:before {
+  content: "\e625"; }
+
+/* line 113, ../sass/_icons.scss */
+.icon-arrow-down:before {
+  content: "\e626"; }
+
+/* line 116, ../sass/_icons.scss */
+.icon-arrow-up:before {
+  content: "\e627"; }
+
+/* line 119, ../sass/_icons.scss */
+.icon-arrow-right:before {
+  content: "\e628"; }
+
+/* line 122, ../sass/_icons.scss */
+.icon-flickr:before {
+  content: "\e607"; }
+
+/* line 125, ../sass/_icons.scss */
+.icon-twitter:before {
+  content: "\e608"; }
+
+/* line 128, ../sass/_icons.scss */
+.icon-facebook:before {
+  content: "\e609"; }
+
+/* line 131, ../sass/_icons.scss */
+.icon-googleplus:before {
+  content: "\e60a"; }
+
+/* line 134, ../sass/_icons.scss */
+.icon-pinterest:before {
+  content: "\e60b"; }
+
+/* line 137, ../sass/_icons.scss */
+.icon-tumblr:before {
+  content: "\e60c"; }
+
+/* line 140, ../sass/_icons.scss */
+.icon-linkedin:before {
+  content: "\e629"; }
+
+/* line 143, ../sass/_icons.scss */
+.icon-spotify:before {
+  content: "\e600"; }
+
+/* line 146, ../sass/_icons.scss */
+.icon-instagram:before {
+  content: "\e60d"; }
+
+/* line 149, ../sass/_icons.scss */
+.icon-soundcloud:before {
+  content: "\e60e"; }
+
+/* line 156, ../sass/_icons.scss */
+.block-btns a {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline; }
+/* line 159, ../sass/_icons.scss */
+.block-btns a:hover {
+  color: #fff !important; }
+/* line 164, ../sass/_icons.scss */
+.block-btns .icon-vimeo:hover {
+  background-color: #aad450; }
+/* line 167, ../sass/_icons.scss */
+.block-btns .icon-twitter:hover {
+  background-color: #00aced; }
+/* line 170, ../sass/_icons.scss */
+.block-btns .icon-facebook:hover {
+  background-color: #3b5998; }
+/* line 173, ../sass/_icons.scss */
+.block-btns .icon-googleplus:hover {
+  background-color: #dd4b39; }
+/* line 176, ../sass/_icons.scss */
+.block-btns .icon-pinterest:hover {
+  background-color: #cb2027; }
+/* line 179, ../sass/_icons.scss */
+.block-btns .icon-instagram:hover {
+  background-color: #517fa4; }
+
+/* VARS 
+-------------------------------------------------------------- */
+/*  COLORS  */
+/*  TYPOGROPHY */
+/*  TRANSITIONS  */
+/* MIX-INS 
+-------------------------------------------------------------- */
+/* PLACEHOLDERS & EXTENDS
+-------------------------------------------------------------- */
+/* BASIC STYLES
+-------------------------------------------------------------- */
+/* line 9, ../sass/style.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 13, ../sass/style.scss */
+body {
+  font: 16px/1.5 "LatoLight", sans-serif;
+  background-color: white;
+  color: black; }
+
+/* line 19, ../sass/style.scss */
+a {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #666666;
+  text-decoration: none; }
+/* line 24, ../sass/style.scss */
+a:hover {
+  color: black; }
+
+/* line 35, ../sass/style.scss */
+ul, ul.menu, ul.menu li {
+  list-style: none;
+  text-align: inherit;
+  margin: 0;
+  padding: 0; }
+
+/* line 43, ../sass/style.scss */
+li a.active, li.opened span.nolink {
+  color: black; }
+
+/* Layout
+-------------------------------------------------------------- */
+/* line 47, ../sass/style.scss */
+#header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  padding: 10px;
+  width: 100%; }
+
+/* line 58, ../sass/style.scss */
+.region-nav-main {
+  float: left; }
+
+/* line 61, ../sass/style.scss */
+.social-icons {
+  float: right; }
+
+/* line 65, ../sass/style.scss */
+#main-nav {
+  *zoom: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+/* line 38, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+#main-nav:after {
+  content: "";
+  display: table;
+  clear: both; }
+/* line 71, ../sass/style.scss */
+#main-nav li {
+  display: inline-block;
+  margin-right: 20px; }
+
+/* line 85, ../sass/style.scss */
+.menu-toggle {
+  display: none; }
+
+/* line 89, ../sass/style.scss */
+#main-container {
+  margin-top: 60px; }
+
+/* IMAGE GALLERY
+-------------------------------------------------------------- */
+/* line 95, ../sass/style.scss */
+.gallery {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1; }
+/* line 102, ../sass/style.scss */
+.gallery .images ul {
+  margin: 0 !important; }
+/* line 106, ../sass/style.scss */
+.gallery .images li {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+  padding: 5%;
+  height: 100%; }
+/* line 117, ../sass/style.scss */
+.gallery .images li .image-group {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+/* line 123, ../sass/style.scss */
+.gallery .images li img {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%; }
+
+/* line 135, ../sass/style.scss */
+#controls {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 20px; }
+/* line 144, ../sass/style.scss */
+#controls .item-next, #controls .item-last {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  position: relative; }
+/* line 150, ../sass/style.scss */
+#controls .item-next:hover, #controls .item-last:hover {
+  opacity: .5; }
+/* line 155, ../sass/style.scss */
+#controls .item-last {
+  background-position: -15px 0; }
+
+/* line 160, ../sass/style.scss */
+.image-count {
+  display: inline-block; }
+
+/* line 164, ../sass/style.scss */
+.thumbs-btn {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin: 0 15px; }
+/* line 173, ../sass/style.scss */
+.thumbs-btn span {
+  -webkit-border-radius: 1.5px 1.5px;
+  -moz-border-radius: 1.5px / 1.5px;
+  border-radius: 1.5px / 1.5px;
+  width: 3px;
+  height: 3px;
+  display: block;
+  float: left;
+  margin: 1.5px;
+  background-color: black; }
+/* line 184, ../sass/style.scss */
+.thumbs-btn:hover {
+  opacity: .5; }
+
+/* line 189, ../sass/style.scss */
+.is-thumb {
+  height: auto;
+  text-align: center;
+  margin-top: 125px; }
+/* line 194, ../sass/style.scss */
+.is-thumb .images {
+  max-width: 1200px;
+  margin: auto; }
+/* line 198, ../sass/style.scss */
+.is-thumb .images ul {
+  margin: 0 !important; }
+/* line 202, ../sass/style.scss */
+.is-thumb .images li {
+  display: inline-block !important;
+  position: relative !important;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: 230px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+  padding: 0; }
+/* line 214, ../sass/style.scss */
+.is-thumb .images li img {
+  padding: 5px 3px;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin-top: 0 !important; }
+/* line 226, ../sass/style.scss */
+.is-thumb #controls {
+  display: none !important; }
+
+/* line 231, ../sass/style.scss */
+.krumo-root {
+  z-index: 1000; }
