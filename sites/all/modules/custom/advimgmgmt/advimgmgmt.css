@@ -122,6 +122,7 @@ width: 30px;
 height: 30px;
 border-radius: 0;
 padding: 0;
+margin: 0 !important;
 }
 .Normal-Image-Widget .LINK-Bg{
 display:none !important;
@@ -207,6 +208,10 @@ cursor:pointer;
 background-color: #E0E0E0;
 padding: 20px;
 }
+
+.ADD-New-Image .form-item{
+  padding: 0;
+}
 .ADV-Image-Activities .form-item ,
 .ADV-Image-Activities .description{
 margin:0;
@@ -233,6 +238,7 @@ float: left;
 padding-top: 8px;
 text-align: center;
 width:370px;
+display: none;
 }
 .Remove-All{
 float:right;
@@ -320,7 +326,7 @@ background: url("images/1.png") no-repeat scroll 10px center #65aa6a;
 cursor: pointer;
 display: inline-block;
 padding: 0 0 0 40px;
-margin-right: 10px;
+margin-right: 100px;
 }
 .Add-Moreimage .Imagedata-Sub{
 background-clip: border-box;
@@ -342,8 +348,8 @@ height: 40px;
 }
 .Add-Moreimage  .form-submit.ajax-processed{
 position:absolute;
-right:-70px;
-top:10px;
+right: -100px;
+top: 5px;
 }
 .Add-Moreimage  label {
 display:none;

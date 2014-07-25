@@ -45,6 +45,7 @@ li.opened span.nolink{color: $color_main;}
 /* Layout
 -------------------------------------------------------------- */
 #header-container{
+  background-color: $page_bg;
   position: fixed;
   top: 0;
   left: 0;
@@ -230,6 +231,13 @@ li.opened span.nolink{color: $color_main;}
 
 .krumo-root{
   z-index: 1000;
+}
+
+.service-links{
+
+  li{
+    @include inline-block;
+  }
 }
 
 

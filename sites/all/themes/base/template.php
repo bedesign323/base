@@ -50,11 +50,27 @@ function base_preprocess_node(&$vars){
 
 	// IMAGE GALLERY ====================================================
 	if($vars['type'] == 'image_gallery'){
+
+		if($vars['view_mode'] == 'teaser'){
+			$vars['cover_image'] = render($vars['content']['field_cover_image']);
+
+			if(isset($vars['cover_image'])){
+				$vars['cover_image'] = l($vars['cover_image'], $url, array('html'=>TRUE));
+			}else{
+				$vars['cover_image']= l(render_image($vars['field_other_images'][0], 'cover_image'), $url, array('html'=>TRUE));
+			}
+			
+			$read_more = l(' — read more', $url);
+			$summary_text = render($vars['content']['body']);
+			$vars['summary'] = $summary_text . '  ' . $read_more;
+		}
+
+
 	   if($vars['view_mode'] == 'full'){
 		   $images = array();
 		   for($i = 0; $i < count($vars['field_other_images']); $i++){
 
-		     	$image = render_image($vars['field_other_images'][$i]);
+		     	$image = render_image($vars['field_other_images'][$i], 'gallery_large');
 
 		     	if($vars['field_other_images'][$i]['linknext'][1]){
 		     		$iw = $vars['field_other_images'][$i]['width'];
@@ -62,7 +78,7 @@ function base_preprocess_node(&$vars){
 		     		$iw2 = $vars['field_other_images'][$i]['width'];
 		     		$wt = $iw + $iw2;
 
-			     	$image2 = render_image($vars['field_other_images'][$i]);
+			     	$image2 = render_image($vars['field_other_images'][$i], 'gallery_large');
 			     	$images[] = '<div class="image-group" data-wt="'. $wt .'">' . $image . $image2 . '</div>';
 		     	}else{
 		     		$images[] = $image;
@@ -114,7 +130,7 @@ function base_preprocess_node(&$vars){
 }
 
 // Renders image with a given image style
-function render_image($img){
+function render_image($img, $style){
 	$uri = $img['uri'];
 	$title = $img['title'];
   	$alt = $img['alt'];
@@ -122,7 +138,7 @@ function render_image($img){
   	$ih = $img['height'];
   	
   	$image_style = array(
-  		'style_name' => 'gallery_large', 
+  		'style_name' => $style, 
   		'path' => $uri,
   		'alt' => $alt,
   		 
