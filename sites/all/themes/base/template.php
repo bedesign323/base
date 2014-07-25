@@ -108,7 +108,7 @@ function base_preprocess_node(&$vars){
 			$vars['summary'] = $summary_text . '  ' . $read_more;
 		}
 
-		kpr($vars);
+		//kpr($vars);
 	}
 	
 }
