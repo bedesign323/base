@@ -155,6 +155,28 @@ Drupal.behaviors.init_gallery = {
 				}
 			}
 
+			jQuery(document).keydown(function(e) {
+			    switch(e.which) {
+			        case 37: // left
+			        lastItem();
+			        break;
+
+			        case 38: // up
+			        break;
+
+			        case 39: // right
+				        nextItem();
+			        break;
+
+			        case 40: // down
+			        	//fadeImage();
+			        break;
+
+			        default: return; // exit this handler for other keys
+			    }
+			    e.preventDefault(); // prevent the default action (scroll / move caret)
+			});
+
 			function setCount(){
 				var count = (current_item + 1) + ' / ' + total_items;
 				jQuery('.image-count').text(count);
