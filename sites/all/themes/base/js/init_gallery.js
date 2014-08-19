@@ -203,7 +203,8 @@ Drupal.behaviors.init_gallery = {
 					   var pt = (gh - ih) / 2;
 					   $this.css('margin-top', pt);
 					});
-
+				}else{
+					jQuery('.gallery.full li').css('display', 'block !important');
 				}
 			}
 

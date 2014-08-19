@@ -6,7 +6,7 @@ Drupal.behaviors.init = {
 			// MENU TWEAKS!!!
  			//===================================
  			$('.menu-toggle').click(function(){
-				$('#header-container .nav').slideToggle(300);
+				$('#header-container #menu').slideToggle(300);
 				return false;
 			});
 

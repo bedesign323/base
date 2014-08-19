@@ -4,7 +4,7 @@
 		<div id="logo"><a href="/"></a></div>
 		
 		<div id="main-nav">
-			<div class="menu-toggle">Menu</div>
+			<div class="menu-toggle icon-list"></div>
 
 			<div id="menu">
 				<?php print render($page['nav_main']); ?>
