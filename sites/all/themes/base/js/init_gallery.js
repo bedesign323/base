@@ -44,11 +44,15 @@ Drupal.behaviors.init_gallery = {
 			   var h = $this.data('height');
 			   var wp = (w / wt) * 99.5;
 			   $this.css('max-width', wp + '%');
+			   var captions = $this.siblings('.captions');
+			   
 
 			   if(index == 0){
 			   	$this.css('margin-right', ((w / wt) / 2) + '%');
+			   	// jQuery('.caption.c-left', captions).css('max-width', wp + '%');
 			   }else{
 			   	$this.css('margin-left', ((w / wt) / 2) + '%');
+			   	// jQuery('.caption.c-right', captions).css('max-width', wp + '%');
 			   }
 			});
 			
@@ -202,6 +206,24 @@ Drupal.behaviors.init_gallery = {
 					   var ih = $this.height();
 					   var pt = (gh - ih) / 2;
 					   $this.css('margin-top', pt);
+					});
+
+					jQuery('.image-group').each(function(index) {
+					   var wt = 0;
+					   jQuery('img', this).each(function(index) {
+						   wt = wt + jQuery(this).width();
+						});
+
+						jQuery('.captions',  this).css('max-width', wt + 10);
+					   
+					});
+
+					jQuery('.single-image').each(function(index) {
+					   var wt = jQuery('img', this).width();
+					  
+
+						jQuery('.captions',  this).css('max-width', wt);
+					   
 					});
 				}else{
 					jQuery('.gallery.full li').css('display', 'block !important');

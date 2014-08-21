@@ -73,15 +73,18 @@ function base_preprocess_node(&$vars){
 		     	$image = render_image($vars['field_other_images'][$i], 'gallery_large');
 
 		     	if($vars['field_other_images'][$i]['linknext'][1]){
+		     		$caption1 = '<div class="caption c-left">' . $vars['field_other_images'][$i]['title'] . '</div>';
 		     		$iw = $vars['field_other_images'][$i]['width'];
 		     		$i++;
+		     		$caption2 = '<div class="caption c-right">' . $vars['field_other_images'][$i]['title'] . '</div>';
 		     		$iw2 = $vars['field_other_images'][$i]['width'];
 		     		$wt = $iw + $iw2;
 
 			     	$image2 = render_image($vars['field_other_images'][$i], 'gallery_large');
-			     	$images[] = '<div class="image-group" data-wt="'. $wt .'">' . $image . $image2 . '</div>';
+			     	$images[] = '<div class="image-group" data-wt="'. $wt .'">' . $image . $image2 . '<div class="captions">' . $caption1 . $caption2 . '</div></div>';
 		     	}else{
-		     		$images[] = $image;
+		     		$caption = '<div class="captions"><div class="caption">' . $vars['field_other_images'][$i]['title'] . '</div></div>';
+		     		$images[] = '<div class="single-image">' . $image . $caption . '</div>';
 		     	}
 
 		   }
@@ -103,6 +106,8 @@ function base_preprocess_node(&$vars){
 		   );
 			drupal_add_js(path_to_theme() . '/js/init_gallery.js');
 		}
+
+		kpr($vars);
 	}
 	
 

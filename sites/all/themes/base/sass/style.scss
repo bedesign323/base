@@ -174,7 +174,8 @@ li.opened span.nolink{color: $color_main;}
       height: 100%;
       display: block;
 
-      .image-group{
+      .image-group,
+      .single-image{
         position: relative;
         width: 100%;
         height: 100%;
@@ -201,7 +202,26 @@ li.opened span.nolink{color: $color_main;}
         }
       }
     }
+  
+  .captions{
+    @include pie-clearfix;
+    font-size: .8em;
+    text-align: center;
+    margin: auto;
 
+    .caption{
+      text-align: left;
+    }
+    
+    .c-left{
+      float: left;
+    }
+
+    .c-right{
+      float: right;
+    }
+
+  }
     
     
   }
@@ -302,7 +322,10 @@ li.opened span.nolink{color: $color_main;}
     
   }
 
-  #controls{
+
+
+  #controls,
+  .captions{
     display: none !important;
   }
 }
