@@ -26,16 +26,7 @@ Drupal.behaviors.init_gallery = {
 				controls.delay(trans_speed / 2).fadeIn(trans_speed);
 			}
 
-			// Process images
-			jQuery(items).each(function(index) {
-			   var $this = jQuery(this)
-			   $this.addClass('item-' + index).hide();
-				$this.attr('rel', index);
-			   
-			   if(index == 0){
-			   	$this.fadeIn(trans_speed);
-			   }
-			});
+			
 
 			jQuery('.image-group img').each(function(index) {
 			   var $this = jQuery(this)
@@ -229,6 +220,19 @@ Drupal.behaviors.init_gallery = {
 					jQuery('.gallery.full li').css('display', 'block !important');
 				}
 			}
+
+			items.imagesLoaded(function(){
+				jQuery(items).each(function(index) {
+				   var $this = jQuery(this)
+				   $this.addClass('item-' + index).hide();
+					$this.attr('rel', index);
+				   
+				   if(index == 0){
+				   	$this.fadeIn(trans_speed);
+				   	resizeStuff();
+				   }
+				});
+			});
 
 			var slide_show;
 

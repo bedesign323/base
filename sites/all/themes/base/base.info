@@ -8,7 +8,7 @@ engine = phptemplate
 stylesheets[all][] = css/style.css
 
 ; JS
-;scripts[] = js/jquery.imagesloaded.min.js
+scripts[] = js/jquery.imagesloaded.min.js
 ;scripts[] = js/jquery.masonry.min.js
 ;scripts[] = js/skrollr.js
 scripts[] = js/init.js
