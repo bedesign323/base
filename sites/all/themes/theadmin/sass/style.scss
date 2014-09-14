@@ -1,0 +1,730 @@
+@import "compass";
+@import "_reset";
+@import "_helpers";
+@import "_font-face";
+@import "_base";
+
+
+
+/* Layout
+-------------------------------------------------------------- */
+#main #content{
+	max-width: 1350px;
+	margin: 0 auto;
+
+	@include bp(l){
+		max-width: 1200px;
+	}
+
+	@include bp(m){
+		max-width: 900px;
+	}
+}
+
+.not-logged-in{
+	#admin{
+		display: none;
+	}
+
+	#main{
+		margin: auto;
+
+		#content{
+			max-width: 700px;
+		}
+	}
+}
+ 
+
+/* User
+-------------------------------------------------------------- */
+.not-logged-in.page-user,
+.page-node-delete,
+.page-admin-structure-menu-item-delete{
+	text-align: center;
+
+	h1{
+		margin: 100px 0;
+	}
+
+	label{
+		display: none;
+	}
+
+	input[type='text'],
+	input[type='password'],
+	input[type="email"]{
+		text-align: center;
+	}
+
+	input[type="submit"]{
+		margin-top: 30px;
+	}
+
+	.text-btn{
+		margin-top: 40px;
+		display: block;
+		text-transform: none;
+	}
+
+	.form-item + .form-item{
+		margin-top: 0;
+		padding-top: 0;
+		border-top: none;
+	}
+}
+
+
+
+/* FORMS 
+--------------------------------------------------------------
+-------------------------------------------------------------- */
+#media-gallery-node-form,
+#menu-edit-item{
+	
+}
+
+
+input[type='text'],
+input[type='password'],
+input[type="email"],
+textarea{
+	@extend %shadow_inset;
+	font-family: $font_main;
+	border: none;
+	padding: 20px;
+	font-size: 18px;
+	color: $color_main;
+	letter-spacing: 2px;
+	width: 100%;
+}
+
+label{
+	font-size: 20px;
+	margin-bottom: 3px;
+	font-family: $font_header;
+	cursor: pointer;
+	letter-spacing: 0px;
+	font-weight: $font_weight_reg !important;
+}
+
+input[type="submit"],
+.button-yes{
+	@include inline-block;
+	@include transition;
+	@include single-box-shadow;
+	@include border-radius(40px);
+	background-color: $color_accent;
+	font-family: $font_header;
+	color: #fff;
+	padding: 20px 40px;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 2px;
+	font-weight: 200;
+	border: none;
+	margin: 0 10px;
+	
+
+	&:hover{
+		background-color: darken($page_bg, 10%);
+	};
+}
+
+fieldset{
+	background-color: darken($page_bg, 5%);
+	padding: 20px;
+	margin-bottom: 40px;
+	
+	.form-wrapper + .form-wrapper{
+		border-top: $border_dashed_lt;
+		padding-top: 20px;
+		margin-top: 20px;
+	}
+}
+
+.fieldset-legend{
+	background-color: $page_bg;
+	padding: 10px 20px;
+	display: block;
+	position: relative;
+	font-size: 28px;
+	font-weight: $font_weight_lt;
+
+}
+
+#edit-delete{
+	
+	@include single-box-shadow(none);
+	background-color: transparent;
+	color: $color_error;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.form-item, .form-actions{
+	margin-top: 0;
+	margin-bottom: 0d;
+
+	.description{
+		margin-top: 10px;
+		font-size: 12px;
+	}
+
+	input.form-checkbox, input.form-radio{
+		position: relative;
+		top: -5px;
+	}
+}
+
+/*.form-item + .form-item{
+	margin-top: 40px;
+	padding-top: 40px;
+	border-top: $border_dashed_lt;
+}
+*/
+
+.filter-wrapper{
+	display: none;
+}
+
+#edit-cancel,
+.button-no{
+	@extend %text_btn;
+	display: block;
+	margin-top: 20px;
+	color: $color_error;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.form-required{
+	font-size: 30px;
+	color: $color_error;
+}
+
+.actions{
+	
+	border-top: $border_dashed_lt;
+}
+
+#edit-actions,
+.form-actions{
+	padding-top: 40px;
+	margin-bottom: 100px;
+	text-align: center;
+}
+
+.tabledrag-changed.warning{
+	color: $color_error;
+}
+
+
+.view-filters{
+
+	.views-submit-button{
+		display: none;
+	}
+
+	.form-item{
+		padding-bottom: 10px;
+	}
+}
+
+.form-holder{
+	max-width: 700px;
+	margin: auto;
+}
+
+.password-suggestions.description{
+	display: none !important;
+}
+
+
+.form-item{
+	padding-bottom: 40px;
+	margin-bottom: 0;
+}
+
+.form-group{
+	margin-bottom: 40px;
+	background-color: darken($page_bg, 2%);
+	border: $border_solid_lt;
+
+	h2{
+		margin-bottom: 40px;
+		background-color: darken($page_bg, 10%);
+		padding: 20px;
+		color: #fff;
+	}
+
+	.form-item{
+		padding: 0 20px 40px;
+	}
+}
+
+.ui-widget select{
+	font-size: 10px !important;
+}
+
+.form-type-plupload{
+	padding: 20px;
+}
+
+.ui-tabs .ui-tabs-panel{
+	padding: 0;
+
+	.view-filters{
+		float: none;
+		border: none;
+		padding: 20px;
+
+		.form-item{
+			padding-bottom: 0;
+		}
+	}
+}
+.plupload_filelist_footer{
+	height: 30px;
+}
+
+.ui-widget-content{
+	font-family: $font_main;
+	background: $page_bg;
+	
+	#branding{
+		@include pie-clearfix;
+		background-color: darken($page_bg, 10%);
+		padding: 0 !important;
+		position: relative;
+	}
+
+	h1{
+		font-size: 40px;
+		color: #fff;
+		height: auto !important;
+		padding: 20px;
+		margin: 0;
+	}
+}
+
+#file-entity-add-upload-multiple{
+
+	.description{
+		display: none;
+	}
+}
+
+#media-browser-tabset ul.tabs{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a{
+	background-color: $page_bg;
+}
+
+body.page-media-browser{
+	background-color: $page_bg;
+}
+
+.ui-tabs .ui-tabs-nav li{
+		background: none !important;
+		border: none !important;
+		border-color: none !important;
+		border-style: none !important;
+		background-image: none !important;
+		font-weight: normal !important;
+		background-image: none !important;
+		margin: 0;
+
+
+		a{
+			border: none !important;
+			border-color: none !important;
+			border-style: none !important;
+			background-image: none !important;
+			font-weight: normal !important;
+			background-image: none !important;
+			background-color: transparent;
+		}
+	}
+
+.ui-dialog{
+	@include border-radius(0);
+	@include single-box-shadow(0, 0, 0, 10px);
+	padding: 0;
+
+}
+
+.ui-widget-content{
+	background-color: $page_bg;
+}
+
+#media-browser-library-list{
+	padding: 20px;
+	border-top: $border_dashed_lt;
+}
+
+
+/* Tables
+-------------------------------------------------------------- */
+table{
+	width: 100%;
+
+	.menu-enabled input{
+		margin: 0;
+	}
+
+	input.form-checkbox, input.form-radio{
+		position: relative;
+		top: auto !important;
+	}
+}
+
+tr.odd{
+	background-color: darken($page_bg, 1%);
+}
+
+tr.even{
+	background-color: darken($page_bg, 4%);
+}
+
+td{
+	padding: 10px;
+	vertical-align: middle;
+
+	.form-type-checkbox{
+		padding: 0 10px;
+	}
+}
+
+thead{
+	background-color: darken($page_bg, 15%);
+	color: $page_bg;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+	th{
+		padding: 10px;
+		font-size: 12px;
+
+		.form-type-checkbox{
+			padding-left: 10px;
+		}
+	}
+}
+
+.draggable a.tabledrag-handle{
+	margin: 0;
+	height: auto;
+}
+a.tabledrag-handle .handle{
+	width: 25px;
+	height: 15px;
+	margin: 3px 25px 0;
+	padding: 0;
+	background-position: 6px 0;
+}
+
+div.indentation{
+	width: 30px;
+}
+
+.tabledrag-toggle-weight-wrapper{
+	display: none;
+}
+
+.view-content{
+	clear: both;
+}
+
+/* Admin Actions
+-------------------------------------------------------------- */
+
+.admin-actions{
+	margin-right: 10px;
+
+	h1{
+		font-weight: 100;
+
+		span{
+			color: $color_accent;
+		}
+	}
+
+	.body{
+		@extend .clearfix;
+		background-color: #e1e1e1;
+		padding: 20px 10px;
+		margin: 10px 0;
+	}
+}
+
+.admin-btn{
+	@extend .inline_block;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	float: left;
+	border-right: #ccc solid 1px;
+	
+	&:hover{
+		
+	}
+
+	&.add{
+		/*color: #57853b;*/
+	}
+
+	&.delete{
+		color: $color_error;
+
+		&:hover{
+			color: lighten($color_error, 20%);
+		}
+	}
+
+	&.right{
+		float: right;
+		border: none;
+	}
+}
+
+#admin{
+	position: fixed;
+	width: 20%;
+	height: 100%;
+	background-color: darken($color_main, 30%);
+	top: 0;
+	left: 0;
+
+	h2{
+		padding: 20px;
+	}
+
+	a{
+		color: $page_bg;
+		letter-spacing: 1px;
+		font-weight: $font_weight_lt;
+		text-transform: lowercase;
+		display: block;
+		padding: 10px 20px;
+
+		&:hover{
+			
+			background-color: darken($color_main, 35%);
+		}
+	}
+
+	ul.menu li{
+		
+		border-bottom: darken($color_main, 25%) solid 1px;
+	}
+}
+
+#main{
+	position: relative;
+	width: 80%;
+	margin-left: 20%;
+	padding: 0 40px;
+}
+
+html, body, #wrap{
+	height: 100%;
+}
+
+#wrap{
+	min-width: 1300px;
+}
+
+/* Media Gallery
+-------------------------------------------------------------- */
+
+.mg-col{
+	margin: 0;
+}
+
+.media-gallery-media .media-gallery-item-wrapper{
+	/*padding: 5px;*/
+	margin: 0 10px 10px 0;
+}
+
+.media-gallery-media .media-gallery-item{
+	@include single-box-shadow;
+	padding: 0;
+	border: none;
+	
+	a{
+		cursor: move;
+	}
+}
+
+.mg-col-4 > .field-items > .field-item, .mg-col-4 .mg-gallery{
+	position: relative;
+	width: 150px !important;
+	height: 150px;
+}
+
+.draggable-wrapper{
+	background-color: $color_accent;
+}
+
+#edit-settings-wrapper,
+#edit-media-gallery-description{
+	display: none;
+}
+
+
+
+div.vertical-tabs{
+	background-color: darken($page_bg, 10%);
+
+	.vertical-tabs-panes{
+		padding-top: 10px;
+	}
+}
+
+.vertical-tabs ul.vertical-tabs-list li.selected{
+	background-color: darken($page_bg, 10%);
+
+	&:hover{
+		outline: none;
+	}
+}
+
+.form-holder{
+	
+}
+
+.image-preview{
+	/*background-color: darken($page_bg, 10%);*/
+	float: left;
+	margin-right: 2%;
+	width: 20%;
+	/*padding: 20px;*/
+
+	img{
+		@include single-box-shadow;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.image-details{
+	float: left;
+	width: 78%;
+}
+
+#multiform{
+
+	h2{
+		margin-bottom: 20px;
+		font-size: 18px;
+		display: none;
+	}
+
+	.form-holder{
+		margin-bottom: 40px;
+		padding-bottom: 20px;
+		@include pie-clearfix;
+		border-bottom: $border_dashed_lt;
+	}
+
+	.form-group{
+		padding-top: 20px;
+	}
+
+	.actions{
+		display: none;
+	}
+
+	.form-submit,
+	a{
+		display: block;
+		width: 200px;
+		margin: auto;
+		text-align: center;
+	}
+
+	a{
+		@include single-box-shadow(none);
+		background-color: transparent;
+		color: $color_error;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin: 20px auto 100px;
+	}
+}
+
+.form-hidden{
+	display: none !important;
+}
+
+.actions{
+	text-align: center;
+}
+
+
+/* MESSAGES
+-------------------------------------------------------------- */
+div.messages-holder{
+	border: none;
+	max-width: 800px;
+	margin: 0 auto 60px;
+
+	.messages{
+		padding: 30px;
+		font-family: $font_header;
+		border: none;
+	}
+
+	.error,
+	.status{
+		background-image: none;
+	}
+
+	.error{
+		background-color: $color_error;
+		color: $page_bg;
+	}
+
+	.warning{
+		
+	}
+}
+
+body div.tabledrag-changed-warning{
+	padding: 30px;
+	max-width: 800px;
+	margin: 20px auto;
+	background-image: none;
+	background-color: $color_warning;
+	color: $color_main;
+	border: none;
+}
+
+
+
+.form-item input.error, .form-item textarea.error, .form-item select.error{
+	border: $color_error solid 2px;
+}
+
+
+
+/* EXTRAS
+-------------------------------------------------------------- */
+body.cke_show_borders{ margin: 0 auto;}
+
+div.krumo-root{
+	text-align: left !important;
+	margin-left: 20%;
+}
+
+
+
