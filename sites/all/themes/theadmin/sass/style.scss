@@ -90,10 +90,11 @@ html, body, #wrap{
 }
 
 #admin{
-	float: left;
+	position: fixed;
+	top: 0;
+	left: 0;
 	left: 300px;
 	margin-left: -300px;
-	position: relative;
 	width: 300px;
 	overflow-y: auto;
 	min-height: 100%;
@@ -195,6 +196,7 @@ textarea{
 }
 
 label{
+	@include inline-block;
 	font-size: 20px;
 	margin-bottom: 3px;
 	font-family: $font_header;
@@ -595,6 +597,9 @@ div.indentation{
 
 	h2{
 		padding: 20px;
+		text-align: center;
+		color: #fff;
+		background-color: darken($color_main, 30%);
 	}
 
 }
@@ -672,10 +677,10 @@ div.indentation{
 
 				&:hover{
 					color: $color_accent;
-					background-color: darken($color_main, 25%);
+					background-color: darken($color_main, 20%);
 
 					&:before{
-						background-color: darken($color_main, 30%);
+						background-color: darken($color_main, 25%);
 					}
 				}
 			}
@@ -700,12 +705,12 @@ div.indentation{
 
 					&.active{
 						color: $color_accent;
-						background-color: darken($color_main, 20%);
+						background-color: darken($color_main, 15%);
 					}
 
 					&:hover{
 						color: $color_accent;
-						background-color: darken($color_main, 10%);
+						background-color: darken($color_main, 20%);
 
 						&.active{
 							color: $color_accent;

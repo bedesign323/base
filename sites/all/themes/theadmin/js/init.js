@@ -10,10 +10,11 @@ Drupal.behaviors.init_admin = {
 				return false;
 			});
 
- 			$('#block-menu-menu-common-tasks .content > ul > li').click(function() {
+ 			$('#block-menu-menu-common-tasks .content > ul > li > span').click(function() {
  				$('#block-menu-menu-common-tasks .content > ul > li > ul').slideUp(300);
- 				$('ul', this).slideDown(300);
-
+ 				$(this).next().slideDown(300);
+ 				$('#block-menu-menu-common-tasks .content > ul > li').removeClass('active-trail');
+ 				$(this).parent().addClass('active-trail');
 
  			});
 
