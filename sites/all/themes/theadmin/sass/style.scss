@@ -2,22 +2,115 @@
 @import "_reset";
 @import "_helpers";
 @import "_font-face";
+@import "_icons";
 @import "_base";
 
+
+/* BASIC STYLES
+-------------------------------------------------------------- */
+*{
+  @include box-sizing('border-box');
+}
+
+body{
+  font-family: $font_main;
+  background-color: $page_bg;  
+  color: $color_main;
+  font-size: 18px;
+  font-weight: $font_weight_reg;  
+}
+
+a{
+  @include transition;
+  color: $color_accent;
+  text-decoration: none;
+  
+  &:hover{
+    color: $color_main;
+  }
+}
+
+p{
+  font-size: 18px;
+  line-height: 22px;
+}
+
+ul,
+ul.menu,
+ul.menu li{
+  list-style: none;
+  text-align: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+li a.active,
+li.opened span.nolink{color: $color_main;}
+
+
+.bull{
+  @extend %bull;
+}
+
+.text-btn{
+  @extend %text_btn;
+}
+
+
+/* TYPOGRAPHY STYLES
+-------------------------------------------------------------- */
+body{
+}
+
+h1, h2, h3, h4{
+  font-weight: $font_weight_lt;
+  font-family: $font_header;
+}
+
+h1{
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 5px;
+  margin: 50px 0;
+
+  span{
+    color: lighten($color_main, 20%);
+  }
+}
+
+h2{
+  font-size: 30px;
+}
 
 
 /* Layout
 -------------------------------------------------------------- */
-#main #content{
-	max-width: 1350px;
-	margin: 0 auto;
+html, body, #wrap{
+	height: 100%;
+}
 
-	@include bp(l){
-		max-width: 1200px;
-	}
+#admin{
+	float: left;
+	left: 300px;
+	margin-left: -300px;
+	position: relative;
+	width: 300px;
+	overflow-y: auto;
+	min-height: 100%;
+}
 
-	@include bp(m){
-		max-width: 900px;
+
+
+#main{
+	float: left;
+	width: 100%;
+	padding: 40px 40px 40px 340px;
+
+	.inner{
+		margin: auto;
+		min-width: 800px;
+		overflow-y: auto;
+		max-width: 1500px;
 	}
 }
 
@@ -34,6 +127,8 @@
 		}
 	}
 }
+
+
  
 
 /* User
@@ -495,52 +590,150 @@ div.indentation{
 	}
 }
 
-#admin{
-	position: fixed;
-	width: 20%;
-	height: 100%;
-	background-color: darken($color_main, 30%);
-	top: 0;
-	left: 0;
+#admin{	
+	background-color: darken($color_main, 10%);
 
 	h2{
 		padding: 20px;
 	}
 
-	a{
-		color: $page_bg;
-		letter-spacing: 1px;
-		font-weight: $font_weight_lt;
-		text-transform: lowercase;
-		display: block;
-		padding: 10px 20px;
+}
 
-		&:hover{
+#block-menu-menu-common-tasks{
+
+	.content > ul.menu{
+		position: relative;
+		border-bottom: darken($color_main, 5%) solid 1px;
+
+		> li{
+			border-top: darken($color_main, 5%) solid 1px;
+
+			&.active-trail{
+
+				> span, > a{
+					color: $color_accent;
+					background-color: darken($color_main, 25%);
+
+					&:before{
+						background-color: darken($color_main, 30%);
+					}
+
+					
+				}
+
+				ul{
+					display: block;
+				}
+			}
+
+			&.expanded span:after{
+				content: "\f105";
+				font-family: 'theadmin';
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+
+				/* Better Font Rendering =========== */
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale; 
+				@include transition;
+				@include inline-block;
+				float: right;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 1em;
+				color: darken($color_main, 30%);
+			}
+
+			&.expanded.active-trail span:after{
+				content: "\f107";
+				color:  darken($color_main, 12%);
+			}
+
 			
-			background-color: darken($color_main, 35%);
+
+			> span, > a{
+				@include transition;
+				background-color: darken($color_main, 12%);
+				color: #fff;
+				display: block;
+				line-height: 40px;
+				height: 40px;
+				letter-spacing: 1px;
+				font-size: 1.2em;
+				font-weight: $font_weight_lt; 
+				cursor: pointer;
+				text-transform: capitalize;
+
+				&:hover{
+					color: $color_accent;
+					background-color: darken($color_main, 25%);
+
+					&:before{
+						background-color: darken($color_main, 30%);
+					}
+				}
+			}
+
+			ul{
+				display: none;
+			}
+
+			li{
+				border-top: darken($color_main, 5%) solid 1px;
+				
+
+
+
+				a{
+					padding: 10px 20px;
+					color: $page_bg;
+					letter-spacing: 1px;
+					font-weight: $font_weight_lt;
+					text-transform: lowercase;
+					display: block;
+
+					&.active{
+						color: $color_accent;
+						background-color: darken($color_main, 20%);
+					}
+
+					&:hover{
+						color: $color_accent;
+						background-color: darken($color_main, 10%);
+
+						&.active{
+							color: $color_accent;
+							background-color: darken($color_main, 20%);
+						}
+					}
+				}
+			}
 		}
 	}
 
-	ul.menu li{
-		
-		border-bottom: darken($color_main, 25%) solid 1px;
+
+	[class^="icon-"]:before, [class*=" icon-"]:before{
+		@include transition;
+		@include inline-block;
+		float: left;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		font-size: 1em;
+		margin-right: 10px;
+		background-color: darken($color_main, 15%);
+
 	}
+
 }
 
-#main{
-	position: relative;
-	width: 80%;
-	margin-left: 20%;
-	padding: 0 40px;
-}
-
-html, body, #wrap{
-	height: 100%;
-}
-
-#wrap{
-	min-width: 1300px;
-}
 
 /* Media Gallery
 -------------------------------------------------------------- */

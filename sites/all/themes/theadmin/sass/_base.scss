@@ -95,7 +95,7 @@ $default-box-shadow-blur: 1.5px;
 }
 
 %shadow_inset{
-  @include single-box-shadow(#ccc, 1px, 1px, 1px, 0, inset);
+  @include single-box-shadow(1px, 1px, 1px, 0, #ccc, inset);
 }
 
 
@@ -114,81 +114,6 @@ $default-box-shadow-blur: 1.5px;
 
 
 
-/* BASIC STYLES
--------------------------------------------------------------- */
-*{
-  @include box-sizing('border-box');
-}
-
-body{
-  font-family: $font_main;
-  background-color: $page_bg;  
-  color: $color_main;
-  font-size: 18px;
-  font-weight: $font_weight_reg; 
-}
-
-a{
-  @include transition;
-  color: $color_accent;
-  text-decoration: none;
-  
-  &:hover{
-    color: $color_main;
-  }
-}
-
-p{
-  font-size: 18px;
-  line-height: 22px;
-}
-
-ul,
-ul.menu,
-ul.menu li{
-  list-style: none;
-  text-align: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-li a.active,
-li.opened span.nolink{color: $color_main;}
-
-
-.bull{
-  @extend %bull;
-}
-
-.text-btn{
-  @extend %text_btn;
-}
-
-
-/* TYPOGRAPHY STYLES
--------------------------------------------------------------- */
-body{
-}
-
-h1, h2, h3, h4{
-  font-weight: $font_weight_lt;
-  font-family: $font_header;
-}
-
-h1{
-  font-size: 60px;
-  text-align: center;
-  letter-spacing: 5px;
-  margin: 50px 0;
-
-  span{
-    color: lighten($color_main, 20%);
-  }
-}
-
-h2{
-  font-size: 30px;
-}
 
 
 
