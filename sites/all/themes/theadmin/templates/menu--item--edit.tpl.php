@@ -11,7 +11,6 @@
 
 	<?php print render($form['link_title']); ?>
 	<?php print render($form['link_path']); ?>
-	<?php print render($form['parent']); ?>
 
 	<div class="actions">
 		<?php print render($form['actions']); ?>

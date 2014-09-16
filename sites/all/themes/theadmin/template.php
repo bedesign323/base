@@ -138,11 +138,11 @@ function theadmin_form_alter(&$form, &$form_state, $form_id) {
    	$form['pass']['#attributes']['placeholder'] = t('password');
 
    	$form['forgot_password'] = array(
-  			'#markup' => '<a href="/user/password" class="text-btn">oops, I forgot my password!</a href="/user/password">',
+  			'#markup' => '<a href="/user/password" class="text-btn">Oops, I forgot my password!</a>',
   			'#weight' => 1000
   		);
 
-   	drupal_set_title(t('welcome to your backend.'));
+   	drupal_set_title(t('Welcome to your backend.'));
 
   }
 
@@ -151,7 +151,12 @@ function theadmin_form_alter(&$form, &$form_state, $form_id) {
    	$form['name']['#description'] = false;
    	$form['name']['#attributes']['placeholder'] = t('email');
 
-   	drupal_set_title(t('did you forget somehting?'));
+    $form['forgot_password'] = array(
+        '#markup' => '<a href="/user" class="text-btn">Nope, I remembered it.</a>',
+        '#weight' => 1000
+      );
+
+   	drupal_set_title(t('Did you forget somehting?'));
 
   }
 
