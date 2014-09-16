@@ -19,6 +19,15 @@ Drupal.behaviors.init_admin = {
  			});
 
 
+ 			// FORMS!!!
+ 			//===================================
+
+ 			$('.form-group.collapsible h2').click(function(){
+ 				$(this).parent().toggleClass('collapsed');
+ 			});
+
+
+
 
  			// MASONRY!!!
  			//===================================

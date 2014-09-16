@@ -70,7 +70,7 @@ function theadmin_preprocess_node(&$vars){
     }
   }
 
-  kpr($vars);
+ // kpr($vars);
 }
 
 
@@ -92,7 +92,7 @@ function theadmin_theme() {
       'render element' => 'form'
     ),
 
-    'media_gallery_node_form' => array(
+    'image_gallery_node_form' => array(
       'arguments' => array('form' => NULL),
       'template' => 'templates/gallery--edit',
       'render element' => 'form'
@@ -110,7 +110,7 @@ function theadmin_theme() {
       'render element' => 'form'
     ),
 
-    'news_node_form' => array(
+    'article_node_form' => array(
       'arguments' => array('form' => NULL),
       'template' => 'templates/news--node--form',
       'render element' => 'form'
@@ -166,7 +166,7 @@ function theadmin_form_alter(&$form, &$form_state, $form_id) {
 
    	//kpr($form);
 
-   	drupal_set_title(t('edit menu link.'));
+   	drupal_set_title(t('Edit Link'));
 
   }
 
@@ -192,11 +192,11 @@ function theadmin_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if ($form_id == 'menu_overview_form') {
-    drupal_set_title(t('edit main menu.'));
+    drupal_set_title(t('Edit Main Menu'));
   }
 
   if ($form_id == 'news_node_form') {
-    drupal_set_title(t('add news.'));
+    drupal_set_title(t('Add News'));
   }
 
   if ($form_id == 'user_profile_form') {
@@ -209,8 +209,10 @@ function theadmin_form_alter(&$form, &$form_state, $form_id) {
     drupal_set_title(t('edit: page'));
     unset($form['field_page_image']['und'][0]['#description']);
     unset($form['field_page_image']['und'][0]['#title']);
-    //kpr($form);
+    
   }
+
+  //dpm($form);
 
   
 } 

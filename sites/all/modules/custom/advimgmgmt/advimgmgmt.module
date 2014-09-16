@@ -152,7 +152,6 @@ function advimgmgmt_file_widget_multiple($variables) {
 			<div class="NAVIGATIONS"><a class = "standardImageMgmt"  data="'.$id.'-MGMT">Standard Image MGMT</a> | <a class = "AdvanceImageMgmt"  data="'.$id.'-MGMT">Advance Image MGMT</a></div>
 			<div class="ADV-Image-Activities">
 				<div class="Add-Moreimage"></div> 
-				<div class="Notes"><em><b>Note: </b>click drag icon to select image</em></div>
 				<div class="Remove-All"><span class="SELECT-ALL">Select everything</span><span class="Removeall-Button"><a>Remove Selected</a></span></div> 
 				<div class="clear-both"></div> 
 				

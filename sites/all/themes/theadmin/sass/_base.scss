@@ -11,6 +11,7 @@ $color_main:         #888;
 $color_accent:       #69a9c4;              
 $color_main_lt:      lighten($color_main, 10%);
 $color_error:        #b54747;
+$color_go:           #8ea963;
 $color_warning:      #f0da72;
 $page_bg:            #f1f1f1;
 
@@ -35,9 +36,9 @@ $border_dashed_lt:      lighten($color_main_lt, 15%) dashed 1px;
 $border_dashed_accent:  $color_accent dashed 1px;
 
 $default-box-shadow-color: #aaa;
-$default-box-shadow-h-offset: 1px;
-$default-box-shadow-v-offset: 1px;
-$default-box-shadow-blur: 1.5px;
+$default-box-shadow-h-offset: 10px;
+$default-box-shadow-v-offset: 11px;
+
 
 /* MIX-INS 
 -------------------------------------------------------------- */
@@ -52,7 +53,6 @@ $default-box-shadow-blur: 1.5px;
     @media (max-width: $bp_sm)  { @content; }
   }
 }
-
 
 
 /* PLACEHOLDERS

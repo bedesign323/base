@@ -25,9 +25,4 @@
 		</div>
 	</div>
 
-	<div id="footer" class="bg-light">
-			<div class="inner">
-				
-			</div>
-		</div>
 </div>

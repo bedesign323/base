@@ -68,10 +68,11 @@ h1, h2, h3, h4{
 }
 
 h1{
-  font-size: 60px;
+  font-size: 3em;
   text-align: center;
   letter-spacing: 5px;
-  margin: 50px 0;
+  margin-bottom: 40px;
+  p
 
   span{
     color: lighten($color_main, 20%);
@@ -110,7 +111,6 @@ html, body, #wrap{
 	.inner{
 		margin: auto;
 		min-width: 800px;
-		overflow-y: auto;
 		max-width: 1500px;
 	}
 }
@@ -209,12 +209,11 @@ input[type="submit"],
 .button-yes{
 	@include inline-block;
 	@include transition;
-	@include single-box-shadow;
-	@include border-radius(40px);
+	@include single-box-shadow(1px, 1px, 2px, 0, #999);
+	@include border-radius(3px);
 	background-color: $color_accent;
 	font-family: $font_header;
 	color: #fff;
-	padding: 20px 40px;
 	cursor: pointer;
 	text-transform: uppercase;
 	font-size: 18px;
@@ -225,8 +224,18 @@ input[type="submit"],
 	
 
 	&:hover{
-		background-color: darken($page_bg, 10%);
+		background-color: darken($color_accent, 10%);
 	};
+}
+
+#edit-actions{
+	margin-top: 20px;
+	border-top: $border_dashed_lt;
+
+	input[type="submit"],
+	.button-yes{
+		padding: 20px 40px;
+	}
 }
 
 fieldset{
@@ -242,22 +251,76 @@ fieldset{
 }
 
 .fieldset-legend{
-	background-color: $page_bg;
-	padding: 10px 20px;
+	background-color: darken($page_bg, 20%);
+	padding: 10px 20px 15px;
+	color: $page_bg;
 	display: block;
 	position: relative;
 	font-size: 28px;
 	font-weight: $font_weight_lt;
+}
+
+.collapsible {
+
+	.fieldset-legend{
+		background: none !important;
+		background-color: $color_accent !important;
+		padding: 10px 20px 15px !important;
+
+		&:before{
+			content: "\f107";
+			font-family: 'theadmin';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			width: 20px;
+			text-align: center;
+			display: inline-block;
+
+			/* Better Font Rendering =========== */
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale; 
+		}
+	}
+
+	a{
+		color: $page_bg;
+	}
+
+	&.collapsed{
+		.fieldset-legend:before{
+			content: "\f105";
+		}
+	}
+
+	.form-item{
+		padding-bottom: 0;
+	}
+
 
 }
 
+.fieldset-legend span.summary{
+	margin: 0;
+}
+
+#edit-submit{
+	background-color: lighten($color_go, 10%);
+
+	&:hover{
+		background-color: darken($color_go, 10%);
+	};
+}
+
 #edit-delete{
-	
-	@include single-box-shadow(none);
-	background-color: transparent;
-	color: $color_error;
-	font-size: 12px;
-	font-weight: 700;
+	background-color: lighten($color_error, 10%);
+
+	&:hover{
+		background-color: darken($color_error, 10%);
+	};
 }
 
 .form-item, .form-actions{
@@ -301,10 +364,6 @@ fieldset{
 	color: $color_error;
 }
 
-.actions{
-	
-	border-top: $border_dashed_lt;
-}
 
 #edit-actions,
 .form-actions{
@@ -329,9 +388,79 @@ fieldset{
 	}
 }
 
-.form-holder{
-	max-width: 700px;
+.form-holder{	
 	margin: auto;
+
+
+}
+
+.hide-label{
+
+	label{
+		display: none;
+	}
+}
+
+
+
+#edit-field-other-images{
+	margin-top: -40px;
+
+	legend{
+		display: none;
+	}
+
+	fieldset{
+		margin-bottom: 0;
+	}
+}
+
+
+
+.ADV-Image-Activities{
+	background-color: transparent !important;
+	padding: 0 !important;
+
+	.form-item{
+		padding: 0 0 20px !important;
+	}
+}
+
+#mvw-field_other_images{
+	background-color: transparent;
+	padding: 0;
+}
+
+.Add-Moreimage .Imagedata-Sub{
+	width: 170px;
+	height: 50px;
+}
+
+.Add-Moreimage .form-submit.ajax-processed{
+	right: -150px;
+	top: 3px;
+	padding: 10px 20px;
+}
+
+.ADD-New-Image{
+
+	.form-item{
+		padding: 0 0 20px;
+	}
+}
+
+.Removeall-Button {
+    background-position: 15px center;
+    border-radius: 0 !important;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 50px;
+
+    a{
+    	padding: 0 10px;
+    }
 }
 
 .password-suggestions.description{
@@ -350,7 +479,6 @@ fieldset{
 	border: $border_solid_lt;
 
 	h2{
-		margin-bottom: 40px;
 		background-color: darken($page_bg, 10%);
 		padding: 20px;
 		color: #fff;
@@ -358,6 +486,97 @@ fieldset{
 
 	.form-item{
 		padding: 0 20px 40px;
+	}
+
+	.body{
+		margin-top: 40px;
+	}
+
+	&.collapsible{
+		h2{
+			color: $color_accent;
+			cursor: pointer;
+		}
+
+		h2.icon:before{
+			@include inline-block;
+			content: "\f107";
+			padding-right: 10px;
+			font-size: .8em;
+			width: 20px;
+			position: relative;
+			top: -4px;
+		}
+	}
+
+	&.collapsed{
+		h2.icon:before{
+			content: "\f105";
+			padding-right: 10px;
+			font-size: .8em;
+		}
+
+		.body{
+			display: none;
+		}
+	}
+}
+
+.insert-images{
+	.image-preview{
+		float: left;
+		z-index: 10;
+
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.image-widget-data{
+		z-index: 1;
+		width: 65%;
+
+		.description{
+			display: none;
+		}
+
+
+		.file,
+		.file-size{
+			font-size: .7em;
+		}
+	}
+
+	.form-type-textfield{
+		margin-top: 10px !important;
+		padding: 10px;
+		background-color: darken($page_bg, 10%);
+		position: relative;
+		z-index: 1;
+
+		label{
+			font-size: .8em;
+		}
+		.form-text{
+			padding: 0;
+			width: 70%;
+		}
+	}
+
+	.form-type-mfw-managed-file{
+		margin-top: 20px;
+
+		.description{
+			display: none;
+		}
+	}
+}
+
+.field-widget-image-image{
+
+	.description{
+		display: none;
 	}
 }
 
@@ -511,6 +730,10 @@ thead{
 		.form-type-checkbox{
 			padding-left: 10px;
 		}
+
+		.form-item{
+			padding-bottom: 0;
+		}
 	}
 }
 
@@ -521,7 +744,7 @@ thead{
 a.tabledrag-handle .handle{
 	width: 25px;
 	height: 15px;
-	margin: 3px 25px 0;
+	margin: 3px 10px 0 0;
 	padding: 0;
 	background-position: 6px 0;
 }
@@ -799,19 +1022,16 @@ div.vertical-tabs{
 	
 }
 
-.image-preview{
-	/*background-color: darken($page_bg, 10%);*/
+/*.image-preview{
 	float: left;
 	margin-right: 2%;
 	width: 20%;
-	/*padding: 20px;*/
 
 	img{
-		@include single-box-shadow;
 		width: 100%;
 		height: auto;
 	}
-}
+}*/
 
 .image-details{
 	float: left;

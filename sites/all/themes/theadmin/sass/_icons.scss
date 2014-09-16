@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"]:before, [class*=" icon-"]:before, .icon:before, .icon-after:after {
 	font-family: 'theadmin';
 	speak: none;
 	font-style: normal;

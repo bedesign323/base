@@ -1,4 +1,14 @@
+
+
 <div class="form-holder clearfix">
+	<div class="admin-actions">
+	<div class="body">
+		<div class="buttons">
+			<a href="/admin/structure/menu/manage/main-menu" class="admin-btn" >Back</a>
+		</div>
+	</div>
+</div>
+
 	<?php print render($form['link_title']); ?>
 	<?php print render($form['link_path']); ?>
 	<?php print render($form['parent']); ?>
