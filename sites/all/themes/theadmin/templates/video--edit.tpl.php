@@ -1,7 +1,13 @@
 <div class="form-holder clearfix">
 	<?php print render($form['title']); ?>
 	<?php print render($form['field_video_url']['und'][0]['video_url']); ?>
-	<?php print render($form['field_video_description']); ?>
+	
+	<div class="form-group collapsible collapsed">
+		<h2 class="icon">Video Description</h2>
+		<div class="body">
+			<span class="hide-label"><?php print render($form['body']); ?></span>
+		</div>
+	</div>
 	
 	<div class="form-group collapsible collapsed">
 		<h2 class="icon">Publishing Options</h2>
