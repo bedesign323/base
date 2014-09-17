@@ -184,12 +184,12 @@ function advimgmgmt_file_widget_multiple($variables) {
 		'#type' => 'markup',
 		'#markup' =>'<div class="Addtional-Actions">
 						<div class="IMAGE-ATTRIBUTES">
-							<div class="IMAGE-NAME">
-								<label>Name</label>'.$widget['#file']->filename.'
-							</div>
 							<div class="IMAGE-PReview">
-								<img src="'.image_style_url('thumbnail', $widget['#file']->uri).'"/>
+								<img src="'.image_style_url('image_gallery_preview', $widget['#file']->uri).'"/>
 							</div>
+              <div class="IMAGE-NAME">
+                '.$widget['#file']->filename.'
+              </div>
 						</div>
 						<div class="LinkTonextimage"></div>
 						<div class="Actions">

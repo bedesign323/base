@@ -181,12 +181,6 @@ html, body, #wrap{
 /* FORMS 
 --------------------------------------------------------------
 -------------------------------------------------------------- */
-#media-gallery-node-form,
-#menu-edit-item{
-	
-}
-
-
 input[type='text'],
 input[type='password'],
 input[type="email"],
@@ -213,36 +207,43 @@ label{
 
 input[type="submit"],
 .button-yes{
-	@include inline-block;
-	@include transition;
-	@include single-box-shadow(1px, 1px, 2px, 0, #999);
-	@include border-radius(3px);
-	background-color: $color_accent;
-	font-family: $font_header;
-	color: #fff;
-	cursor: pointer;
-	text-transform: uppercase;
-	font-size: 18px;
-	letter-spacing: 2px;
-	font-weight: 200;
-	border: none;
+	@include btn;
 	margin: 0 10px;
-	
+}
 
-	&:hover{
-		background-color: darken($color_accent, 10%);
-	};
+#edit-cancel,
+.button-no{
+	@extend %text_btn;
+	display: block;
+	margin-top: 20px;
+	color: $color_error;
+	font-size: 12px;
+	font-weight: 700;
 }
 
 #edit-actions{
 	margin-top: 20px;
 	border-top: $border_dashed_lt;
+	padding-top: 40px;
+	margin-bottom: 100px;
+	text-align: center;
 
 	input[type="submit"],
 	.button-yes{
-		padding: 20px 40px;
+		@include btn_big;
+	}
+
+	#edit-submit{
+		@include btn_big($color_go);
+	}
+
+	#edit-delete{
+		@include btn_big($color_error);
 	}
 }
+
+
+
 
 fieldset{
 	background-color: darken($page_bg, 5%);
@@ -306,32 +307,17 @@ fieldset{
 		padding-bottom: 0;
 	}
 
-
 }
 
 .fieldset-legend span.summary{
 	margin: 0;
 }
 
-#edit-submit{
-	background-color: lighten($color_go, 10%);
 
-	&:hover{
-		background-color: darken($color_go, 10%);
-	};
-}
-
-#edit-delete{
-	background-color: lighten($color_error, 10%);
-
-	&:hover{
-		background-color: darken($color_error, 10%);
-	};
-}
 
 .form-item, .form-actions{
 	margin-top: 0;
-	margin-bottom: 0d;
+	margin-bottom: 0;
 
 	.description{
 		margin-top: 10px;
@@ -344,39 +330,17 @@ fieldset{
 	}
 }
 
-/*.form-item + .form-item{
-	margin-top: 40px;
-	padding-top: 40px;
-	border-top: $border_dashed_lt;
-}
-*/
-
 .filter-wrapper{
 	display: none;
 }
 
-#edit-cancel,
-.button-no{
-	@extend %text_btn;
-	display: block;
-	margin-top: 20px;
-	color: $color_error;
-	font-size: 12px;
-	font-weight: 700;
-}
+
 
 .form-required{
 	font-size: 30px;
 	color: $color_error;
 }
 
-
-#edit-actions,
-.form-actions{
-	padding-top: 40px;
-	margin-bottom: 100px;
-	text-align: center;
-}
 
 .tabledrag-changed.warning{
 	color: $color_error;
@@ -422,52 +386,6 @@ fieldset{
 }
 
 
-
-.ADV-Image-Activities{
-	background-color: transparent !important;
-	padding: 0 !important;
-
-	.form-item{
-		padding: 0 0 20px !important;
-	}
-}
-
-#mvw-field_other_images{
-	background-color: transparent;
-	padding: 0;
-}
-
-.Add-Moreimage .Imagedata-Sub{
-	width: 170px;
-	height: 50px;
-}
-
-.Add-Moreimage .form-submit.ajax-processed{
-	right: -150px;
-	top: 3px;
-	padding: 10px 20px;
-}
-
-.ADD-New-Image{
-
-	.form-item{
-		padding: 0 0 20px;
-	}
-}
-
-.Removeall-Button {
-    background-position: 15px center;
-    border-radius: 0 !important;
-    cursor: pointer;
-    display: inline-block;
-    height: 50px;
-    line-height: 50px;
-    padding-left: 50px;
-
-    a{
-    	padding: 0 10px;
-    }
-}
 
 .password-suggestions.description{
 	display: none !important;
@@ -690,6 +608,117 @@ body.page-media-browser{
 	border-top: $border_dashed_lt;
 }
 
+/* Image Gallery Grid 
+--------------------------------------------------------------
+-------------------------------------------------------------- */
+.ADV-Image-Activities{
+	background-color: transparent !important;
+	padding: 0 !important;
+
+	.form-item{
+		padding: 0 0 20px !important;
+	}
+}
+
+#mvw-field_other_images{
+	background-color: transparent;
+	padding: 0;
+}
+
+.Add-Moreimage .Imagedata-Sub{
+	width: 170px;
+	height: 50px;
+}
+
+.Add-Moreimage .form-submit.ajax-processed{
+	right: -150px;
+	top: 3px;
+	padding: 10px 20px;
+}
+
+.ADD-New-Image{
+
+	.form-item{
+		padding: 0 0 20px;
+	}
+}
+
+.Removeall-Button {
+    background-position: 15px center;
+    border-radius: 0 !important;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 50px;
+
+    a{
+    	padding: 0 10px;
+    }
+}
+
+.Addtional-Actions{
+
+	.Actions{
+		margin-top: 20px;
+		padding-top: 20px;
+		text-align: center;
+
+		.remove-button{
+			display: none;
+		}
+		
+		.Cancel-Button a{
+			@extend %text_btn;
+			display: block;
+			margin-top: 20px;
+			color: $color_error !important;
+			font-size: 12px;
+			font-weight: 700;
+		}
+
+	}
+
+
+}
+
+
+
+.Advance-Image-Widget .mvw-type-blocks .Imagedata-Sub .form-submit{
+	@include btn_big;
+}
+
+.Advance-Image-Widget .mvw-type-blocks .Imagedata-Sub{
+	@include single-box-shadow(0, 0, 10px, 0, #666);
+	background-color: darken($page_bg, 5%);
+	padding: 20px;
+
+	.description{
+		display: none;
+	}
+
+	input[type="text"], input[type="password"], input[type="email"], textarea{
+		padding: 5px; 
+		width: 50%;
+	}
+
+	.form-item{
+		padding: 10px 0;
+	}
+	.IMAGE-ATTRIBUTES{
+
+	}
+	.IMAGE-PReview{
+		@include pie-clearfix;
+		float: left;
+		margin-right: 20px;
+	}
+
+}
+
+
+
+
 
 /* Tables
 -------------------------------------------------------------- */
@@ -781,7 +810,7 @@ div.indentation{
 	}
 
 	.body{
-		@extend .clearfix;
+		@include pie-clearfix;
 		background-color: #e1e1e1;
 		padding: 20px 10px;
 		margin: 10px 0;
