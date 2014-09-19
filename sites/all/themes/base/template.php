@@ -107,7 +107,7 @@ function base_preprocess_node(&$vars){
 			drupal_add_js(path_to_theme() . '/js/init_gallery.js');
 		}
 
-		kpr($vars);
+		//kpr($vars);
 	}
 	
 

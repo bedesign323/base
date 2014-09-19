@@ -6,12 +6,15 @@ Drupal.behaviors.init_gallery = {
 			var total_items = items.length;
 			var current_item = 0;
 			var last_item = 0;
-			var trans_speed = 800;
+			var trans_speed = 300;
 			var border = 50;
 			var gallery = jQuery('.gallery.full');
 			var controls = jQuery('#controls');
 			var win = jQuery(window);
 			var win_w = win.width();
+			var details = jQuery('.details-holder');
+
+			var slide_show;
 
 			var settings = Drupal.settings.gallery_settings;
 			var autoplay = settings.autoplay;
@@ -26,7 +29,13 @@ Drupal.behaviors.init_gallery = {
 				controls.delay(trans_speed / 2).fadeIn(trans_speed);
 			}
 
-			
+			jQuery(items).each(function(index) {
+			   var $this = jQuery(this)
+			   $this.addClass('item-' + index).hide();
+				$this.attr('rel', index);
+
+
+			});
 
 			jQuery('.image-group img').each(function(index) {
 			   var $this = jQuery(this)
@@ -80,12 +89,12 @@ Drupal.behaviors.init_gallery = {
 				gallery.fadeOut(300, function(){
 					gallery.addClass('is-not-thumb');
 					gallery.removeClass('is-thumb');
-					resize_stuff();
+					resizeStuff();
 					items.hide();
 					gallery.show();
 
 					jQuery(' .item-' + current_item).fadeIn(trans_speed);
-					resize_stuff();
+					resizeStuff();
 					controls.fadeIn(300);
 					setClicks();
 				});
@@ -99,7 +108,7 @@ Drupal.behaviors.init_gallery = {
 						jQuery(' .item-' + last_item).fadeOut(trans_speed);
 					}			
 				}
-				resize_stuff();
+				resizeStuff();
 				setCount();
 
 			}
@@ -112,7 +121,7 @@ Drupal.behaviors.init_gallery = {
 					items.show();
 					gallery.fadeIn(300);
 					controls.fadeOut(300);
-					resize_stuff();
+					resizeStuff();
 					setClicks();
 					
 				});
@@ -153,6 +162,7 @@ Drupal.behaviors.init_gallery = {
 			jQuery(document).keydown(function(e) {
 			    switch(e.which) {
 			        case 37: // left
+			        clearInterval(slide_show);
 			        lastItem();
 			        break;
 
@@ -160,6 +170,7 @@ Drupal.behaviors.init_gallery = {
 			        break;
 
 			        case 39: // right
+				        clearInterval(slide_show);
 				        nextItem();
 			        break;
 
@@ -176,6 +187,26 @@ Drupal.behaviors.init_gallery = {
 				var count = (current_item + 1) + ' / ' + total_items;
 				jQuery('.image-count').text(count);
 			}
+
+			function showDetails(){
+				details.fadeIn(trans_speed);
+			}
+
+			function hideDetails(){
+				details.fadeOut(trans_speed);
+			}
+
+			jQuery('#controls .details-btn').click(function(){
+				showDetails();
+				clearInterval(slide_show);
+				return false;
+			});
+
+			jQuery('.details-holder .close-btn, .details-holder .overlay').click(function(){
+				hideDetails();
+				clearInterval(slide_show);
+				return false;
+			});
 			
 			jQuery('#controls .item-next').click(function(){
 				nextItem();
@@ -184,13 +215,13 @@ Drupal.behaviors.init_gallery = {
 			});	
 
 			jQuery(window).resize(function(){
-				resize_stuff();
+				resizeStuff();
 			});
 
-			function resize_stuff(){
+			function resizeStuff(){
 				win_w = win.width();
 
-				if( win_w > 700){
+				if( win_w > 1080){
 					var gh = jQuery('.gallery.full li').height();
 					jQuery('.gallery.full li img').each(function(index) {
 					   var $this = jQuery(this);
@@ -218,34 +249,28 @@ Drupal.behaviors.init_gallery = {
 					});
 				}else{
 					jQuery('.gallery.full li').css('display', 'block !important');
+					clearInterval(slide_show);
 				}
 			}
 
-			items.imagesLoaded(function(){
-				jQuery(items).each(function(index) {
-				   var $this = jQuery(this)
-				   $this.addClass('item-' + index).hide();
-					$this.attr('rel', index);
-				   
-				   if(index == 0){
-				   	$this.fadeIn(trans_speed);
-				   	resizeStuff();
-				   }
-				});
+			jQuery('.first.item-0').imagesLoaded(function(){
+				// jQuery('.first.item-0').css('display', 'list-item');
+				// jQuery('.first.item-0').animate({'opacity' : 1}, trans_speed);
+				jQuery('.first.item-0').fadeIn(trans_speed);
+				resizeStuff();
+
+				if(autoplay == 1 && win_w > 1080){
+					slide_show = setInterval(nextItem, 4000);
+				}
 			});
-
-			var slide_show;
-
-			if(autoplay == 1){
-				slide_show = setInterval(nextItem, 4000);
-			}
-
+			
+			
 			if(start_thumbs == 1){
 				fadeImage();
 				clearInterval(slide_show);
 			}
 
-			resize_stuff();
+			//resizeStuff();
 			setClicks();
 			setCount();
 		}
