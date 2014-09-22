@@ -107,6 +107,21 @@ function base_preprocess_node(&$vars){
 			drupal_add_js(path_to_theme() . '/js/init_gallery.js');
 		}
 
+
+		if($vars['vid'] == 8){
+			$vars['theme_hook_suggestions'][] = 'node__intro__gallery';
+			$intro_images = array();
+			
+			for($i = 0; $i < 5; $i++){
+				$intro_images[] = file_create_url($vars['field_other_images'][$i]['uri']);
+			}
+
+			drupal_add_js(array('intro_images' => $intro_images), 'setting');
+			drupal_add_js(path_to_theme() . '/js/jquery.backstretch.min.js');
+			drupal_add_js(path_to_theme() . '/js/intro-gallery.js');
+
+			//kpr($intro_images);
+		}
 		//kpr($vars);
 	}
 	
