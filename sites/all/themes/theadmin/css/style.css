@@ -1671,23 +1671,29 @@ div.messages-holder {
   margin: 0 auto 60px;
 }
 /* line 1133, ../sass/style.scss */
+div.messages-holder h1 {
+  font-size: 1em;
+  letter-spacing: 0;
+  margin-bottom: 0;
+}
+/* line 1139, ../sass/style.scss */
 div.messages-holder .messages {
   padding: 30px;
   font-family: "Raleway", sans-serif;
   border: none;
 }
-/* line 1139, ../sass/style.scss */
+/* line 1145, ../sass/style.scss */
 div.messages-holder .error,
 div.messages-holder .status {
   background-image: none;
 }
-/* line 1144, ../sass/style.scss */
+/* line 1150, ../sass/style.scss */
 div.messages-holder .error {
   background-color: #b54747;
   color: #f1f1f1;
 }
 
-/* line 1154, ../sass/style.scss */
+/* line 1160, ../sass/style.scss */
 body div.tabledrag-changed-warning {
   padding: 30px;
   max-width: 800px;
@@ -1698,19 +1704,19 @@ body div.tabledrag-changed-warning {
   border: none;
 }
 
-/* line 1166, ../sass/style.scss */
+/* line 1172, ../sass/style.scss */
 .form-item input.error, .form-item textarea.error, .form-item select.error {
   border: #b54747 solid 2px;
 }
 
 /* EXTRAS
 -------------------------------------------------------------- */
-/* line 1174, ../sass/style.scss */
+/* line 1180, ../sass/style.scss */
 body.cke_show_borders {
   margin: 0 auto;
 }
 
-/* line 1176, ../sass/style.scss */
+/* line 1182, ../sass/style.scss */
 div.krumo-root {
   text-align: left !important;
   margin-left: 20%;

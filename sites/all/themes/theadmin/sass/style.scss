@@ -1130,6 +1130,12 @@ div.messages-holder{
 	max-width: 800px;
 	margin: 0 auto 60px;
 
+	h1{
+		font-size: 1em;
+		letter-spacing: 0;
+		margin-bottom: 0;
+	}
+
 	.messages{
 		padding: 30px;
 		font-family: $font_header;
